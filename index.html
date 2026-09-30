@@ -1266,277 +1266,253 @@
 
 
 
+	
 <!-- =================================================================
-     [Enterprise Zero-Penalty Footer - Full Automation]
+     [SEO 자동화 무수정 올인원 푸터]
+     - 코드 수정 없이 수백 개 웹페이지에 즉시 복사/붙여넣기 가능
+     - URL 경로 자동 분석 -> Schema.org 브레드크럼(Breadcrumb) 리치 스니펫 주입
+     - 도메인/타이틀/연도/이메일 100% 자동 동기화
 ================================================================== -->
-<footer id="nv-clean-footer" class="ncf-root" role="contentinfo">
-  <div class="ncf-container">
+<footer id="auto-seo-footer" role="contentinfo" itemscope itemtype="https://schema.org/WPFooter">
+  <div class="asf-container">
     
-    <!-- 1. 상단: 사이트 브랜딩 및 신뢰성 안내 -->
-    <div class="ncf-top">
-      <div class="ncf-brand-area">
-        <a href="/" class="ncf-brand-link" id="ncf-brand-text" title="홈으로 이동">Website</a>
-        <p class="ncf-brand-summary">
-          본 사이트는 신뢰성 있는 전문 정보를 제공하며, 웹 표준 및 이용자 개인정보 보호 관련 법령을 엄격히 준수합니다.
+    <!-- 상단: 자동 인식 브랜드 정보 및 내부 링크 최적화 -->
+    <div class="asf-top">
+      <div class="asf-brand-box">
+        <a href="/" class="asf-brand-name" id="asf-title-link" title="홈으로 이동">Website</a>
+        <p class="asf-brand-desc" id="asf-desc-text">
+          본 페이지는 웹 표준을 준수하며 신뢰성 높은 정보를 제공합니다.
         </p>
       </div>
 
-      <!-- 탐색 메뉴: 크롤링 에러가 원천 차단된 시맨틱 버튼 -->
-      <nav class="ncf-policy-nav" aria-label="사이트 운영 정책">
-        <ul class="ncf-policy-list">
-          <li><a href="/" class="ncf-nav-link" title="홈페이지 메인">홈</a></li>
-          <li><button type="button" class="ncf-nav-btn" onclick="ncfOpenModal('ncf-dlg-privacy')">개인정보처리방침</button></li>
-          <li><button type="button" class="ncf-nav-btn" onclick="ncfOpenModal('ncf-dlg-terms')">이용약관</button></li>
-          <li><button type="button" class="ncf-nav-btn" onclick="ncfOpenModal('ncf-dlg-disclaimer')">면책공고 및 문의</button></li>
+      <!-- 내부 링크 및 크롤러 예산 분배 제어 -->
+      <nav class="asf-nav" aria-label="바닥글 탐색">
+        <ul class="asf-links">
+          <li><a href="/" title="홈페이지">홈</a></li>
+          <li><a href="javascript:void(0)" onclick="asfOpenModal('privacy')" rel="nofollow">개인정보처리방침</a></li>
+          <li><a href="javascript:void(0)" onclick="asfOpenModal('terms')" rel="nofollow">이용약관</a></li>
+          <li><a href="#" id="asf-mail-link">문의하기</a></li>
         </ul>
       </nav>
     </div>
 
-    <div class="ncf-divider" aria-hidden="true"></div>
+    <div class="asf-divider"></div>
 
-    <!-- 2. 하단: 사업자/운영자 메타 정보 (도메인/이메일 자동 바인딩) -->
-    <div class="ncf-bottom">
-      <address class="ncf-meta-info">
-        <span class="ncf-status-tag">
-          <span class="ncf-status-dot" aria-hidden="true"></span>
-          <span>서비스 정상 운영 중</span>
-        </span>
-        <span class="ncf-meta-item">호스트: <strong id="ncf-domain-val">도메인 확인 중</strong></span>
-        <span class="ncf-meta-item">공식 문의: <a id="ncf-contact-link" class="ncf-contact-mail" href="mailto:contact@domain.com">contact@domain.com</a></span>
-      </address>
-
-      <div class="ncf-copyright">
-        <small>&copy; <span id="ncf-year-val">2026</span> <span id="ncf-copy-brand">Website</span>. All rights reserved.</small>
+    <!-- 하단: 메타 정보 및 카피라이트 -->
+    <div class="asf-bottom">
+      <div class="asf-meta-info">
+        <span>사이트: <strong id="asf-domain-text">domain.com</strong></span>
+        <span class="asf-sep">|</span>
+        <span>운영 문의: <span id="asf-email-text">admin@domain.com</span></span>
       </div>
+      <p class="asf-copyright">
+        &copy; <span id="asf-year">2026</span> <span class="asf-copy-name">Website</span>. All rights reserved.
+      </p>
     </div>
 
   </div>
 
-  <!-- [정적 인덱싱 팝업 1] 개인정보처리방침 (네이버 Yeti가 텍스트를 바로 긁어감) -->
-  <dialog id="ncf-dlg-privacy" class="ncf-dialog" aria-labelledby="ncf-priv-title">
-    <div class="ncf-dialog-box">
-      <div class="ncf-dialog-header">
-        <h3 id="ncf-priv-title">개인정보처리방침</h3>
-        <button type="button" class="ncf-dialog-close" onclick="ncfCloseModal('ncf-dlg-privacy')" aria-label="창 닫기">&times;</button>
+  <!-- 데드링크 방지용 내장 약관 모달 -->
+  <div id="asf-modal" class="asf-modal" style="display:none;" role="dialog" aria-modal="true">
+    <div class="asf-modal-content">
+      <div class="asf-modal-header">
+        <h4 id="asf-modal-title">약관 안내</h4>
+        <button type="button" onclick="asfCloseModal()" class="asf-close-btn" aria-label="닫기">&times;</button>
       </div>
-      <div class="ncf-dialog-content">
-        <p>본 사이트는 「개인정보 보호법」 및 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」을 준수하여 이용자의 권익을 보호합니다.</p>
-        <p><strong>1. 수집 항목:</strong> 접속 로그, 쿠키(Cookie), 접속 IP 주소, 브라우저 정보 등 자동 생성 정보</p>
-        <p><strong>2. 수집 목적:</strong> 비정상적 악성 접근 차단, 사이트 서비스 품질 개선 및 트래픽 통계 분석</p>
-        <p><strong>3. 보유 기간:</strong> 수집 및 이용 목적이 달성된 개인정보는 관련 법령에 따른 의무 보존 기간 종료 후 지체 없이 안전하게 파기합니다.</p>
-        <p><strong>4. 권리 행사:</strong> 이용자는 언제든지 브라우저 설정을 통해 쿠키 저장을 거부하거나 관련 문의를 요청할 수 있습니다.</p>
-      </div>
+      <div class="asf-modal-body" id="asf-modal-body"></div>
     </div>
-  </dialog>
+  </div>
 
-  <!-- [정적 인덱싱 팝업 2] 이용약관 -->
-  <dialog id="ncf-dlg-terms" class="ncf-dialog" aria-labelledby="ncf-terms-title">
-    <div class="ncf-dialog-box">
-      <div class="ncf-dialog-header">
-        <h3 id="ncf-terms-title">서비스 이용약관</h3>
-        <button type="button" class="ncf-dialog-close" onclick="ncfCloseModal('ncf-dlg-terms')" aria-label="창 닫기">&times;</button>
-      </div>
-      <div class="ncf-dialog-content">
-        <p><strong>제1조 (목적)</strong> 본 약관은 본 사이트가 제공하는 정보 서비스의 이용 조건 및 권리·의무 사항을 규정함을 목적으로 합니다.</p>
-        <p><strong>제2조 (저작권 보호)</strong> 사이트에 게시된 모든 콘텐츠의 지식재산권은 운영자에게 있으며, 사전 서면 승인 없는 무단 전재, 크롤링 및 상업적 복제를 엄격히 금합니다.</p>
-        <p><strong>제3조 (서비스 제공)</strong> 정보의 정확성을 위해 지속적으로 갱신되나, 시스템 정기 점검 등 불가피한 경우 사전 통지 없이 서비스가 일시 중단될 수 있습니다.</p>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- [정적 인덱싱 팝업 3] 면책공고 및 권리보호 -->
-  <dialog id="ncf-dlg-disclaimer" class="ncf-dialog" aria-labelledby="ncf-disc-title">
-    <div class="ncf-dialog-box">
-      <div class="ncf-dialog-header">
-        <h3 id="ncf-disc-title">면책공고 및 권리보호 안내</h3>
-        <button type="button" class="ncf-dialog-close" onclick="ncfCloseModal('ncf-dlg-disclaimer')" aria-label="창 닫기">&times;</button>
-      </div>
-      <div class="ncf-dialog-content">
-        <p><strong>1. 법적 책임 한계:</strong> 본 사이트의 콘텐츠는 일반적인 정보 제공만을 목적으로 작성되었으며, 최신성이나 법적 완전성을 담보하지 않습니다. 이용자의 자체적인 판단하에 활용되어야 합니다.</p>
-        <p><strong>2. 권리 침해 신고:</strong> 게시물로 인한 저작권 침해, 명예훼손 등의 사안은 상기 기재된 공식 도메인 문의 메일로 소명 자료를 접수해 주시면 관계 법령에 따라 지체 없이 처리됩니다.</p>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- 격리형 반응형 CSS (다크모드 지원) -->
+  <!-- 자체 완결형 경량 스타일 (CSS 간섭 방지 scoped) -->
   <style>
-    .ncf-root {
+    #auto-seo-footer {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Apple SD Gothic Neo", sans-serif;
       background-color: #f8fafc;
       border-top: 1px solid #e2e8f0;
-      color: #64748b;
-      font-size: 13px;
-      line-height: 1.6;
-      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
       padding: 36px 20px 24px;
       box-sizing: border-box;
       width: 100%;
-      text-align: left;
     }
-    .ncf-container { max-width: 1040px; margin: 0 auto; }
-    .ncf-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; }
-    .ncf-brand-area { max-width: 560px; }
-    .ncf-brand-link {
-      font-size: 16px;
+    #auto-seo-footer .asf-container { max-width: 1000px; margin: 0 auto; }
+    #auto-seo-footer .asf-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+    #auto-seo-footer .asf-brand-box { max-width: 580px; }
+    #auto-seo-footer .asf-brand-name {
+      font-size: 15px;
       font-weight: 700;
       color: #0f172a;
       text-decoration: none;
       display: inline-block;
       margin-bottom: 6px;
     }
-    .ncf-brand-link:hover { text-decoration: underline; }
-    .ncf-brand-summary { margin: 0; font-size: 12.5px; color: #64748b; word-break: keep-all; }
-    .ncf-policy-nav { flex-shrink: 0; }
-    .ncf-policy-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-    .ncf-nav-link { color: #475569; text-decoration: none; font-weight: 500; font-size: 12.5px; }
-    .ncf-nav-link:hover { color: #0284c7; text-decoration: underline; }
-    .ncf-nav-btn {
-      background: none; border: none; padding: 0; color: #475569;
-      font-size: 12.5px; font-weight: 500; cursor: pointer; font-family: inherit;
+    #auto-seo-footer .asf-brand-name:hover { text-decoration: underline; }
+    #auto-seo-footer .asf-brand-desc { margin: 0; font-size: 12px; color: #64748b; word-break: keep-all; }
+    #auto-seo-footer .asf-nav { flex-shrink: 0; }
+    #auto-seo-footer .asf-links { list-style: none; padding: 0; margin: 0; display: flex; gap: 14px; }
+    #auto-seo-footer .asf-links a {
+      color: #475569;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
     }
-    .ncf-nav-btn:hover { color: #0284c7; text-decoration: underline; }
-    .ncf-divider { border-top: 1px solid #e2e8f0; margin: 24px 0 18px; }
-    .ncf-bottom {
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 12px; font-size: 12px; color: #94a3b8;
+    #auto-seo-footer .asf-links a:hover { color: #0284c7; text-decoration: underline; }
+    #auto-seo-footer .asf-divider { border-top: 1px solid #e2e8f0; margin: 20px 0; }
+    #auto-seo-footer .asf-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 11.5px;
+      color: #94a3b8;
     }
-    .ncf-meta-info {
-      font-style: normal; display: flex; align-items: center; flex-wrap: wrap; gap: 14px;
+    #auto-seo-footer .asf-sep { margin: 0 8px; color: #cbd5e1; }
+    #auto-seo-footer .asf-copyright { margin: 0; }
+    
+    /* 약관 모달창 */
+    #auto-seo-footer .asf-modal {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); z-index: 999999;
+      display: flex; align-items: center; justify-content: center;
     }
-    .ncf-status-tag {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 2px 8px; background: #ffffff; border: 1px solid #cbd5e1;
-      border-radius: 12px; font-size: 11px; color: #334155;
+    #auto-seo-footer .asf-modal-content {
+      background: #fff; border-radius: 8px; max-width: 500px; width: 90%;
+      padding: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
-    .ncf-status-dot { width: 6px; height: 6px; background-color: #22c55e; border-radius: 50%; }
-    .ncf-meta-item strong { color: #475569; font-weight: 600; }
-    .ncf-contact-mail { color: #475569; font-weight: 500; text-decoration: none; border-bottom: 1px dotted #94a3b8; }
-    .ncf-contact-mail:hover { color: #0284c7; border-bottom-color: #0284c7; }
-    .ncf-copyright small { font-size: 100%; }
-
-    /* 네이티브 다이얼로그 모달 */
-    .ncf-dialog {
-      border: none; border-radius: 10px; padding: 0;
-      max-width: 480px; width: 92%; box-shadow: 0 12px 30px rgba(0,0,0,0.18);
-    }
-    .ncf-dialog::backdrop { background: rgba(15, 23, 42, 0.45); backdrop-filter: blur(2px); }
-    .ncf-dialog-box { background: #ffffff; padding: 22px; text-align: left; }
-    .ncf-dialog-header {
-      display: flex; justify-content: space-between; align-items: center;
-      border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 12px;
-    }
-    .ncf-dialog-header h3 { margin: 0; font-size: 15px; color: #0f172a; }
-    .ncf-dialog-close {
-      background: none; border: none; font-size: 22px; line-height: 1; cursor: pointer; color: #64748b;
-    }
-    .ncf-dialog-content { font-size: 12.5px; line-height: 1.65; color: #475569; max-height: 55vh; overflow-y: auto; }
-    .ncf-dialog-content p { margin: 6px 0; }
-
-    /* 다크모드 자동 대응 */
-    @media (prefers-color-scheme: dark) {
-      .ncf-root { background-color: #0f172a; border-top-color: #1e293b; color: #94a3b8; }
-      .ncf-brand-link { color: #f8fafc; }
-      .ncf-brand-summary { color: #64748b; }
-      .ncf-nav-link, .ncf-nav-btn { color: #cbd5e1; }
-      .ncf-divider { border-top-color: #1e293b; }
-      .ncf-status-tag { background: #1e293b; border-color: #334155; color: #94a3b8; }
-      .ncf-meta-item strong { color: #cbd5e1; }
-      .ncf-contact-mail { color: #cbd5e1; border-bottom-color: #64748b; }
-      .ncf-dialog-box { background: #1e293b; color: #cbd5e1; }
-      .ncf-dialog-header { border-bottom-color: #334155; }
-      .ncf-dialog-header h3 { color: #f8fafc; }
-      .ncf-dialog-close { color: #94a3b8; }
-      .ncf-dialog-content { color: #94a3b8; }
-    }
+    #auto-seo-footer .asf-modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    #auto-seo-footer .asf-modal-header h4 { margin: 0; font-size: 16px; color: #1e293b; }
+    #auto-seo-footer .asf-close-btn { background: none; border: none; font-size: 24px; cursor: pointer; color: #64748b; }
+    #auto-seo-footer .asf-modal-body { max-height: 300px; overflow-y: auto; font-size: 12.5px; color: #475569; line-height: 1.6; }
 
     @media (max-width: 768px) {
-      .ncf-top { flex-direction: column; gap: 16px; }
-      .ncf-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+      #auto-seo-footer .asf-top { flex-direction: column; gap: 16px; }
+      #auto-seo-footer .asf-bottom { flex-direction: column; align-items: flex-start; }
     }
   </style>
-
-  <!-- 초고속 자동 치환 및 모달 제어 스크립트 -->
-  <script>
-  function ncfOpenModal(id) {
-    var m = document.getElementById(id);
-    if (m && typeof m.showModal === 'function') m.showModal();
-  }
-  function ncfCloseModal(id) {
-    var m = document.getElementById(id);
-    if (m && typeof m.close === 'function') m.close();
-  }
-
-  (function() {
-    'use strict';
-    function executeAutoBinding() {
-      try {
-        var rawHost = (window.location && window.location.hostname) ? window.location.hostname : '';
-        var cleanHost = rawHost.replace(/^www\./i, '');
-        var validDomain = cleanHost || 'official-site.com';
-
-        // 1. 도메인 기반 공식 메일 자동 생성 (contact@현재도메인)
-        var autoMail = 'contact@' + validDomain;
-        var contactLink = document.getElementById('ncf-contact-link');
-        if (contactLink) {
-          contactLink.href = 'mailto:' + autoMail;
-          contactLink.textContent = autoMail;
-          contactLink.setAttribute('title', validDomain + ' 공식 운영자에게 이메일 문의');
-        }
-
-        // 2. 브랜드명 지능형 판별 (OG 태그 -> 타이틀 분할 추출)
-        var brand = '';
-        var ogMeta = document.querySelector('meta[property="og:site_name"]');
-        if (ogMeta && ogMeta.content) brand = ogMeta.content.trim();
-        
-        if (!brand && document.title) {
-          var parts = document.title.split(/[\-\|\:\—\_]/);
-          var candidate = parts[parts.length - 1].trim();
-          if (candidate && candidate.length < 25) brand = candidate;
-        }
-        if (!brand && cleanHost) {
-          var dotIdx = cleanHost.indexOf('.');
-          var baseName = (dotIdx > 0) ? cleanHost.substring(0, dotIdx) : cleanHost;
-          brand = baseName.charAt(0).toUpperCase() + baseName.slice(1);
-        }
-        if (!brand) brand = 'Official';
-
-        // 3. 한국 표준시(KST) 연도 추출
-        var kstYear = '2026';
-        try {
-          var dtf = new Intl.DateTimeFormat('ko-KR', { timeZone: 'Asia/Seoul', year: 'numeric' });
-          kstYear = dtf.format(new Date()).replace(/[^0-9]/g, '');
-        } catch(e) {
-          kstYear = String(new Date().getFullYear());
-        }
-
-        // 4. DOM 안전 텍스트 바인딩 (누적 레이아웃 이동 0)
-        var brandLink = document.getElementById('ncf-brand-text');
-        var copyBrand = document.getElementById('ncf-copy-brand');
-        var domainElem = document.getElementById('ncf-domain-val');
-        var yearElem = document.getElementById('ncf-year-val');
-
-        if (brandLink) brandLink.textContent = brand;
-        if (copyBrand) copyBrand.textContent = brand;
-        if (domainElem) domainElem.textContent = cleanHost || 'Online';
-        if (yearElem) yearElem.textContent = kstYear;
-
-        // 5. 모달 배경 클릭 시 닫기 핸들러
-        document.querySelectorAll('#nv-clean-footer .ncf-dialog').forEach(function(dlg) {
-          dlg.addEventListener('click', function(e) {
-            if (e.target === dlg) dlg.close();
-          });
-        });
-      } catch (err) {}
-    }
-
-    // HTML 파싱 직후 즉각 텍스트를 바인딩하여 크롤러 캡처 성공률 100% 확보
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', executeAutoBinding);
-    } else {
-      executeAutoBinding();
-    }
-  })();
-  </script>
 </footer>
+
+<!-- 3. 실시간 SEO 연동 및 브레드크럼 리치스니펫 자동 주입 스크립트 -->
+<script>
+(function() {
+  'use strict';
+
+  function initSeoEngine() {
+    var host = window.location.hostname;
+    var cleanHost = host.replace(/^www\./, '');
+    var origin = window.location.origin;
+    var pathname = window.location.pathname;
+    
+    // 1) 사이트 타이틀 자동 판별
+    var rawTitle = document.title ? document.title.split(/[-|_|:]/)[0].trim() : cleanHost;
+    if (!rawTitle) rawTitle = cleanHost;
+
+    // 2) DOM 텍스트 자동 동기화
+    var titleLink = document.getElementById('asf-title-link');
+    if (titleLink) titleLink.textContent = rawTitle;
+
+    var domainText = document.getElementById('asf-domain-text');
+    if (domainText) domainText.textContent = cleanHost;
+
+    var autoEmail = 'admin@' + cleanHost;
+    var emailText = document.getElementById('asf-email-text');
+    if (emailText) emailText.textContent = autoEmail;
+
+    var mailLink = document.getElementById('asf-mail-link');
+    if (mailLink) mailLink.href = 'mailto:' + autoEmail;
+
+    var yearElem = document.getElementById('asf-year');
+    if (yearElem) yearElem.textContent = new Date().getFullYear();
+
+    var copyNames = document.querySelectorAll('#auto-seo-footer .asf-copy-name');
+    copyNames.forEach(function(el) { el.textContent = rawTitle; });
+
+    // 3) [상위노출 핵심] 구글 브레드크럼(BreadcrumbList) & WebSite Schema 자동 생성
+    var pathSegments = pathname.split('/').filter(function(seg) { return seg.length > 0; });
+    var itemListElement = [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": origin + "/"
+      }
+    ];
+
+    var accumulatedPath = origin;
+    pathSegments.forEach(function(segment, index) {
+      accumulatedPath += '/' + segment;
+      var decodedName = decodeURIComponent(segment).replace(/[-_+]/g, ' ');
+      // 마지막 글 제목인 경우 타이틀 활용
+      if (index === pathSegments.length - 1 && document.title) {
+        decodedName = rawTitle;
+      }
+      itemListElement.push({
+        "@type": "ListItem",
+        "position": index + 2,
+        "name": decodedName,
+        "item": accumulatedPath
+      });
+    });
+
+    var dynamicSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": origin + "/#website",
+          "url": origin,
+          "name": rawTitle
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": window.location.href + "#breadcrumb",
+          "itemListElement": itemListElement
+        }
+      ]
+    };
+
+    // Schema script 태그 주입
+    var script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(dynamicSchema);
+    document.head.appendChild(script);
+  }
+
+  // 4) 내장 모달(약관) 제어 로직 (404 방지)
+  window.asfOpenModal = function(type) {
+    var modal = document.getElementById('asf-modal');
+    var title = document.getElementById('asf-modal-title');
+    var body = document.getElementById('asf-modal-body');
+    var cleanHost = window.location.hostname.replace(/^www\./, '');
+
+    if (type === 'privacy') {
+      title.textContent = '개인정보처리방침';
+      body.innerHTML = '<strong>' + cleanHost + '</strong>는 이용자의 개인정보를 중요시하며, 관련 법령을 준수합니다.<br><br>' +
+        '1. 수집 항목: 접속 로그, 브라우저 정보 등 서비스 이용 과정에서 자동 생성되는 정보<br>' +
+        '2. 이용 목적: 사이트 트래픽 분석 및 안정적인 서비스 유지관리<br>' +
+        '3. 보유 기간: 관련 법령에 따른 의무 보존 기간 동안 보관 후 파기됩니다.';
+    } else {
+      title.textContent = '서비스 이용약관';
+      body.innerHTML = '<strong>' + cleanHost + '</strong> 이용을 환영합니다.<br><br>' +
+        '1. 본 사이트의 모든 콘텐츠는 정보 제공 목적으로 작성되었습니다.<br>' +
+        '2. 무단 복제 및 상업적 도용을 금지하며, 링크 공유 및 인용은 출처를 명시해야 합니다.';
+    }
+    if (modal) modal.style.display = 'flex';
+  };
+
+  window.asfCloseModal = function() {
+    var modal = document.getElementById('asf-modal');
+    if (modal) modal.style.display = 'none';
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSeoEngine);
+  } else {
+    initSeoEngine();
+  }
+})();
+</script>
 
 
 
